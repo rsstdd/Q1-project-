@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+    <link rel="stylesheet" href="q1.css">
+    <title>Q1 Project</title>
+  </head>
+  <body>
+
+    <nav class="blue-grey darken-1" role="navigation">
+      <div class="nav-wrapper container black-text"><a id="logo-container" href="#" class="brand-logo center white-text">News that Won't Totally Ruin Your Day</a>
+        <ul class="right hide-on-med-and-down">
+          <!-- <li><a href="#">Link</a></li> -->
+        </ul>
+        <ul id="nav-mobile" class="side-nav">
+          <!-- <li><a href="#">Navbar Link</a></li> -->
+        </ul>
+        <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+      </div>
+    </nav>
+    <!-- content -->
+      <main>
+        <section id="selector" class"col s6">
+          <form>
+            <div class="row">
+              <div class="col s4">
+                <div class="input-field col s12 required validate">
+                  <i class="material-icons prefix">public</i>
+                    <select>
+                      <option value="1">Associated Press</option>
+                      <option value="2">New York Times</option>
+                      <option value="3">CNN</option>
+                      <option value="3">The Gaurdian</option>
+                      <option value="3">Independent</option>
+                    </select>
+                    <label><h6>Select Your News Outlet</h6></label>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col offset-s1 s2 center">
+                  <button class="btn waves-effect waves-light blue-grey lighten-2" type="submit" name="action">Search
+                    <i class="material-icons right">search</i>
+                  </button>
+                </div>
+              </div>
+          </form>
+        </section>
+        <section id="article-row" class="col s6">
+          <div class="articles">
+
+          </div>
+        </section>
+      </main>
+    </div>
+
+
+    <footer class="page-footer blue-grey darken-2">
+        <div class="container">
+          <a class="orange-text text-lighten-3 right" href="http://materializecss.com">rsstdd</a>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+    <script type="text/javascript" src="q1.js" ></script>
+  </body>
+</html>

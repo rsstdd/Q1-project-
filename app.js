@@ -1,3 +1,7 @@
+$(document).ready(function() {
+    $('select').material_select();
+  });
+
 //Will return a list of all the titles//
 
 // var $xhr = $.getJSON('https://newsapi.org/v1/articles?source=associated-press&sortBy=top&apiKey=7ac8963fbab04b74bf07af53f91e3d0d');
@@ -56,7 +60,7 @@ $xhr.done(function(data) {
     $data.map(function(article) {
       upliftingArticles.push(article);
      });
-     //console.log(upliftingArticles.preview.images.source.url);
+     console.log(upliftingArticles);
 });
 
 
