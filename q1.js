@@ -5,8 +5,9 @@
 
   const renderUplifting = function() {
     $('#article-row').empty();
+    $('body').css('background-image', 'none')
     for (const article of $upliftingArticles) {
-      const $col = $('<div class="col s12 m6">');
+      const $col = $('<div class="col s12 m12 l6">');
       const $cardDiv = $('<div class="card small">');
       const $card = $('<div class="card-image waves-effect waves-block waves-light">');
 
@@ -24,13 +25,14 @@
       $card.append($upliftImg);
 
       const $cardContent = $('<div class="card-content center">');
-      const $titleSpan = $(`<p class="card-title activator grey-text text-darken-4 truncate "> ${article.data.title} </p><i class="material-icons right">more_vert</i>`);
+      const $titleSpan = $(`<p class="card-title activator grey-text text-darken-4 truncate "> ${article.data.title} </p>\
+        <i class="material-icons right">more_vert</i>`);
       const $read = $(`<p><a href="${article.data.url}" target="_blank">Read the Full article here</a></p>`);
 
       $cardDiv.append($cardContent);
       $cardContent.append($titleSpan);
       $cardContent.append($read);
-
+      
       const $cardReveal = $('<div class="card-reveal">');
       const $revealTitleSpan = ('<span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i>');
       const $revealText = $(`<h5>${article.data.title}</h5>`);
@@ -44,8 +46,9 @@
 
   const render = function() {
     $('#article-row').empty();
+    $('body').css('background', 'none')
     for (const article of $newsArticles) {
-      const $col = $('<div class="col s12 m6">');
+      const $col = $('<div class="col s12 m12 l6">');
       const $cardDiv = $('<div class="card small">');
       const $card = $('<div class="card-image waves-effect waves-block waves-light">');
 
@@ -62,7 +65,8 @@
       $card.append($img);
 
       const $cardContent = $('<div class="card-content center">');
-      const $titleSpan = $(`<span class="card-title activator grey-text text-darken-4">${article.title}<i class="material-icons right">more_vert</i>`);
+      const $titleSpan = $(`<span class="card-title activator grey-text text-darken-4">${article.title}\
+        <i class="material-icons right">more_vert</i>`);
 
       $cardDiv.append($cardContent);
       $cardContent.append($titleSpan);
