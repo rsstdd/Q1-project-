@@ -32,7 +32,7 @@
       $cardDiv.append($cardContent);
       $cardContent.append($titleSpan);
       $cardContent.append($read);
-      
+
       const $cardReveal = $('<div class="card-reveal">');
       const $revealTitleSpan = ('<span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i>');
       const $revealText = $(`<h5>${article.data.title}</h5>`);
@@ -45,6 +45,7 @@
   };
 
   const render = function() {
+    debugger;
     $('#article-row').empty();
     $('body').css('background', 'none')
     for (const article of $newsArticles) {
@@ -102,7 +103,8 @@
 
       return;
     } else {
-      const $xhr = $.getJSON(`https://newsapi.org/v1/articles?source=${$val}&sortBy=top&apiKey=7ac8963fbab04b74bf07af53f91e3d0d`);
+      const $xhr = $.getJSON(`https://cors-anywhere.herokuapp.com/https://newsapi.org/v1/articles?source=\
+        ${$val}&sortBy=top&apiKey=7ac8963fbab04b74bf07af53f91e3d0d`);
 
       $xhr.done((data) => {
         if ($xhr.status !== 200) {
