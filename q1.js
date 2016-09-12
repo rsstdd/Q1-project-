@@ -103,7 +103,7 @@
 
       return;
     } else {
-      const $xhr = $.getJSON(`https://cors-anywhere.herokuapp.com/https://newsapi.org/v1/articles?source=\
+      const $xhr = $.getJSON(`https://newsapi.org/v1/articles?source=\
         ${$val}&sortBy=top&apiKey=7ac8963fbab04b74bf07af53f91e3d0d`);
 
       $xhr.done((data) => {
