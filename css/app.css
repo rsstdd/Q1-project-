@@ -41,3 +41,7 @@ a {
   font-weight: bolder;
   line-height: 90%;
 }
+
+#newsBtn {
+  width: 220px;
+}

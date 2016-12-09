@@ -1,11 +1,10 @@
-Returns list of headlines for Independent Press
+// Returns list of headlines for Independent Press
 var $xhr = $.getJSON('https://newsapi.org/v1/articles?source=independent&sortBy=top&apiKey=7ac8963fbab04b74bf07af53f91e3d0d');
 
 $xhr.done(function(data) {
     if ($xhr.status !== 200) {
         return;
     }
-    //console.log(data);
     data.articles.map(function(article){
       console.log(article.title);
       console.log(article.author);
@@ -26,10 +25,7 @@ $xhr.done(function(data) {
     }
     var upliftingArticles = [];
 
-    //$data is an array of the Articles
     var $data = data.data.children;
-    // console.log($data);
-    // var image = data.data.children[0].data.preview.images[0].source;//this finds the image
     console.log(image);
     $data.map(function(article) {
       upliftingArticles.push(article);
@@ -38,54 +34,12 @@ $xhr.done(function(data) {
      console.log(upliftingArticles);
 });
 
+$title.attr({
+  'data-tooltip': article.title
+});
 
-//  var image = data.data.children[0].data.preview.images[0].source.url;//this finds the image
-
-
-
-//
-// var $modal = $(`<div id="${movie.id}" class="modal">`);
-// var $modalContent = $('<div class="modal-content">');
-// var $modalHeader = $('<h4>').text(movie.Title);
-// var $movieYear = $('<h6>').text(`Released in ${movie.Year}`);
-// var $modalText = $('<p>').text(movie.Plot);
-//
-// $modalContent.append($modalHeader, $movieYear, $modalText);
-// $modal.append($modalContent);
-//
-//$articleRow.append($card, $modal);
-
-
-//
-// var $action = $('<div class="card-action center">');
-// var $plot = $('<a class="waves-effect waves-light btn modal-trigger">');
-//
-// //$plot.attr('href', `#${movie.id}`);
-
-
-      // var $modal = $(`<div id="${movie.id}" class="modal">`);
-      // var $modalContent = $('<div class="modal-content">');
-      // var $modalHeader = $('<h4>').text(movie.Title);
-      // var $movieYear = $('<h6>').text(`Released in ${movie.Year}`);
-      // var $modalText = $('<p>').text(movie.Plot);
-
-      // $modalContent.append($modalHeader, $movieYear, $modalText);
-      // $modal.append($modalContent);
-
-
-      //
-      // $title.tooltip({ delay: 50, });
-
-
-      $title.attr({
-        // 'data-position': 'top',
-        'data-tooltip': article.title
-      });
-
-      console.log($title);
 
       $title.text(article.title);
-      console.log($title);
 
       var $image = $('<img class="activator">');
 
@@ -168,7 +122,6 @@ $xhr.done(function(data) {
         for (var article of $newsArticles) {
           var $carouselBtnDiv = $('<div class="carousel-fixed-item center"></div>');//this is appending
           var $carouselBtn = $('<a class="btn waves-effect white grey-text darken-text-2">Select</a>');
-          // var $carouselImage = $('<img>');
           var $carouselPanel = $('<div class="carousel-item red white-text"></div>');
           var $title = $('<h2></h2>');
           var $description = $('<p></p>');
@@ -177,11 +130,6 @@ $xhr.done(function(data) {
           $carouselBtn.text(article.title);
           $carouselBtn.attr('href', article.url);
           $carouselBtnDiv.append($carouselBtn);
-
-          // $carouselImage.attr('src', article.urlToImage);
-          // $carouselBtnDiv.append($carouselImage);
-          // $carouselImage.attr('src', article.urlToImage);
-          // $carouselPanel.attr('href', article.url);
 
           $title.text(article.title);
           $description.text(article.description);
@@ -201,7 +149,6 @@ $xhr.done(function(data) {
                 return;
             }
             var upliftingArticles = [];
-            //$data is an array of the Articles
             var $data = data.data.children;
             $data.map(function(article) {
             upliftingArticles.push(article);
@@ -232,7 +179,6 @@ $xhr.done(function(data) {
                  }).height('150px');
 
                  $cardTitle.text($data.title);
-                //  $revealText.text($data.description);
 
                  $cardImage.append($image);
                  $card.append($cardTitle);
@@ -334,7 +280,6 @@ $xhr.done(function(data) {
                let $newsArticles = [];
                let $upliftingArticles = [];
 
-               //Will return an array of all the top headlines from selected source//
              function validate(event) {
                let $val = $('#source').val();
                let $target = $(event.target);
@@ -415,7 +360,6 @@ $xhr.done(function(data) {
                function render() {
                  $('#article-row').empty();
                  for (const article of $newsArticles) {
-                   //create col; append to row; create card; append to col//
                    let $col = $('<div class="col s12 m6">');
                    let $cardDiv = $('<div class="card small">');
                    let $card = $('<div class="card-image waves-effect waves-block waves-light">');
@@ -423,7 +367,6 @@ $xhr.done(function(data) {
                    $col.append($cardDiv);
                    $cardDiv.append($card);
 
-                   //create img; assign url and alt as attr; append to img/
                    let $img = $('<img class="activator src=">');
                    $img.attr({
                      src: article.urlToImage,
@@ -431,8 +374,6 @@ $xhr.done(function(data) {
                    }).height('350px');
                    $card.append($img);
 
-                   //create cardContent; create title; append to card//
-                   //assign article title to titleSpan; append title//
                    let $cardContent = $('<div class="card-content center">');
                    $cardDiv.append($cardContent);
                    let $titleSpan = $(`<span class="card-title activator grey-text text-darken-4">${article.title}<i class="material-icons right">more_vert</i>`);
@@ -440,7 +381,6 @@ $xhr.done(function(data) {
                    let $link = $(`<p><a href="${article.url}" target="_blank">Read the full article here</a></p>`);
                    $cardContent.append($link);
 
-                   //create cardRevealDiv; append to $card;
                    let $cardReveal = $('<div class="card-reveal">');
                    let $revealTitleSpan = ('<span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i>');
                    $cardDiv.append($cardReveal);

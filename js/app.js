@@ -16,7 +16,7 @@
 
       $xhr.done((data) => {
         if ($xhr.status !== 200) {
-
+          console.log('Not 200');
           return;
         }
         data.articles.map((article) => {
